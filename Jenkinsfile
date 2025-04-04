@@ -9,8 +9,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                // Run the container and execute unit tests
-                bat 'docker run password-manager python -m unittest discover -s test'
+                // Run the container and execute unit tests in the test folder
+                bat 'docker run password-manager python -m unittest discover -s test -p "*.py"'
             }
         }
     }
